@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import Job from './Job'
 import { useParams } from 'react-router-dom'
+import Favourite from './Favourite'
 
 const CompanySearchResults = () => {
   const [jobs, setJobs] = useState([])
@@ -35,6 +36,7 @@ const CompanySearchResults = () => {
           {jobs.map((jobData) => (
             <Job key={jobData._id} data={jobData} id={jobData._id} /* onclick dispatch */ />
           ))}
+          <Favourite key={1}/>
         </Col>
       </Row>
     </Container>
