@@ -1,12 +1,12 @@
 import { useSelector } from "react-redux";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import Job from "./Job";
 
 const Favourite = () => {
     const favJobs = useSelector((state) => state.favourites)
+    console.log(favJobs)
 
     return(
-        <Container>
         <Row>
           <Col>
             {favJobs.map((jobData) => (
@@ -14,7 +14,6 @@ const Favourite = () => {
             ))}
           </Col>
         </Row>
-      </Container>
     )
 }
 
