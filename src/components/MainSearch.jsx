@@ -45,8 +45,7 @@ const MainSearch = () => {
               placeholder="type and press Enter"
             />
           </Form>
-          <Link to="/favourite"><button>favourites</button></Link>
-          
+          <Link to="/favourite" className='btn btn-primary'>Favourites</Link>
         </Col>
         <Col xs={10} className="mx-auto mb-5">
           {jobs.map((jobData) => (

@@ -4,22 +4,29 @@ import { FaStar } from "react-icons/fa";
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-const Job = ({ data, id }) => {
-  const[isSelected, setIsSelected] = useState(false)
+const Job = ({ data }) => {
+  const [isSelected, setIsSelected] = useState(false)
   const dispatch = useDispatch()
 
   const handleClick = () => {
-    setIsSelected(!isSelected)
-    if(isSelected){
+    console.log("prima di set" , isSelected)
+    setIsSelected(isSelected => !isSelected)
+    console.log(isSelected, "dopo set")
+
+
+
+    if(!isSelected){
+      console.log(isSelected, "dentro if quando è true")
       dispatch({
         type : 'ADD_FAVOURITES',
-        payload : id
+        payload : data
       })}
 
-    else if(!isSelected){
+    else if(isSelected){
+      console.log(isSelected, "dentro else if quando è false")
       dispatch({
         type : 'REMOVE_FAVOURITES',
-        payload : id
+        payload : data
       })
     }}
   
